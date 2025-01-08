@@ -197,10 +197,14 @@ tasks:
     ref: main
     src: https://github.com/qbcore-framework/qb-loading
 
-  - action: download_github
-    dest: ./resources/[cdev]/vmenu
+  - action: download_file
+    dest: ./tmp/files/vmenu.zip
     ref: main
-    src: https://github.com/TomGrobbe/vMenu
+    src: https://github.com/TomGrobbe/vMenu/releases/download/v3.6.5/vMenu-v3.6.5.zip
+
+  - action: unzip
+    dest: ./resources/[cdev]/vmenu
+    src: ./tmp/files/vmenu.zip
 
   # Clean up
   - action: remove_path
